@@ -1,4 +1,4 @@
-# Author:       David Fontenot
+# Author:            David Fontenot
 # CLID/ULID/Section: dsf3449/C00177513 Section 002 
 # Part I of this lab will use the math library, which means
 # it must be imported
