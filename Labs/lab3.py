@@ -20,7 +20,7 @@ price = eval(input("Enter price of pizza: "))
 ppsi = price / pizzaArea
 
 # print out the price of the pizza per square inch 
-print("Price per square inch: $", ppsi)
+print("Price per square inch: $", format(ppsi, '0.2f'))
 
 # print a couple of blank lines before the next section of code begins
 # asking for input 
@@ -32,10 +32,9 @@ print()
 word = input("Enter a 3-letter word: ")
 
 # print the ASCII code (a number) for each letter of the word just input
-listOfChars = list(word)
-print(listOfChars[0], " = ", ord(listOfChars[0]))
-print(listOfChars[1], " = ", ord(listOfChars[1]))
-print(listOfChars[2], " = ", ord(listOfChars[2]))
+print(word[0], " = ", ord(word[0]))
+print(word[1], " = ", ord(word[1]))
+print(word[2], " = ", ord(word[2]))
 
 
 # print a couple of blank lines when the program is done
