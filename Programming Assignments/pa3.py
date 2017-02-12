@@ -11,6 +11,7 @@
 # Certificate of Authenticity:
 # I certify that this assignment is entirely my own work.
 
+# For exiting the program under an error condition
 import sys
 
 # Function because I'm lazy
@@ -27,10 +28,10 @@ itemNonPerishTax = itemNonPerish * .085
 print("Enter package type.  'N' = non-perishable; 'P' = perishable")
 
 # Ask the user for their answer
-packageType = input("What type of package?")
+packageType = input("What type of package? ")
 
 # Ask the user for the weight of the package
-packageWeight = eval(input("What is the weight of your package?"))
+packageWeight = eval(input("What is the weight of your package? "))
 
 
 if packageType == "N":
@@ -51,7 +52,10 @@ if packageType == "N":
         # Invalid input, throw error
         line()
         print("Error: Invalid package weight")
+        line()
+        # Exit the program to prevent invalid printing
         sys.exit()
+    
     # Print output for type non-perishable
     print("Item Cost                ", itemNonPerish, "(non-perishable)")
     print("Tax (8.5%)               ", format(itemNonPerishTax, '1.2f'))
@@ -78,7 +82,26 @@ elif packageType == "P":
         shippingCost = 19.95
     else:
         # Invalid input, throw error
-        print("Error: Negative package weight")
+        line()
+        print("Error: Invalid package weight")
+        line()
+        # Exit the program to prevent invalid printing
+        sys.exit()
+    
+    # Print output for type perishable
+    print("Item Cost                ", itemPerish, "(perishable)")
+    print("Tax (8.5%)               ", format(itemPerishTax, '1.2f'))
+    print("Total Cost               ", format(itemPerish + itemPerishTax, '1.2f'))
+    line()
+    print("Package Weight:", packageWeight, "pounds")
+    print("Shipping Cost            ", shippingCost)
+    line()
+    print("Total (incl. shipping)   ", format(itemPerish + itemPerishTax + shippingCost, '1.2f'))
+
 else:
     # Invalid package type, throw error
+    line()
     print("Error: Unknown package type.")
+    line()
+    # Exit the program
+    sys.exit()
