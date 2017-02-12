@@ -57,6 +57,7 @@ if packageType == "N":
         sys.exit()
     
     # Print output for type non-perishable
+    print()
     print("Item Cost                ", itemNonPerish, "(non-perishable)")
     print("Tax (8.5%)               ", format(itemNonPerishTax, '1.2f'))
     print("Total Cost               ", format(itemNonPerish + itemNonPerishTax, '1.2f'))
@@ -89,6 +90,7 @@ elif packageType == "P":
         sys.exit()
     
     # Print output for type perishable
+    print()
     print("Item Cost                ", itemPerish, "(perishable)")
     print("Tax (8.5%)               ", format(itemPerishTax, '1.2f'))
     print("Total Cost               ", format(itemPerish + itemPerishTax, '1.2f'))
