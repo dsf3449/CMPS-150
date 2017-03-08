@@ -58,6 +58,9 @@ while currentValue != 0:
     # Read the next number in the file
     currentValue = eval(file.readline())
 
+# The file is no longer required, close it.
+file.close()
+
 # Loop is done, begin printing
 print("Positive =", positive)
 print("Negative =", negative)
