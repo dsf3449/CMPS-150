@@ -11,6 +11,9 @@
 # Certificate of Authenticity:
 # I certify that this assignment is entirely my own work.
 
+# Import sys for error handling
+import sys
+
 # Declare vars
 positive = 0
 negative = 0
@@ -23,8 +26,11 @@ average = 0
 # Open the file for reading
 file = open("pa5data.py", 'r')
 
-# Read from the file
-currentValue = eval(file.readline())
+# Confirm that the file is not blank.
+try:
+    currentValue = eval(file.readline())
+except SyntaxError:
+    sys.exit("Your file is blank!")
 
 while currentValue != 0:
     if currentValue > 0:
@@ -59,4 +65,4 @@ print("Even =", even)
 print("Odd =", odd)
 print("Sum =", sum)
 print("Count =", count)
-print("Average =", sum/count)
+print("Average =", format(sum/count, '0.2f'))
