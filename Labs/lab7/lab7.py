@@ -11,7 +11,7 @@ print("    Fuel Type        Gallons     Bill")
 print("-------------------------------------")  
 
 # We want the program to read 15, exactly.
-for i in range(0, 15):
+for i in range(15):
     # Read the data from the file
     fuelType = inFile.readline().strip()
     fuelAmount = eval(inFile.readline())
@@ -30,12 +30,9 @@ for i in range(0, 15):
     elif fuelType == 'D':
         word = "Diesel"
         bill = fuelAmount * 2.35
-
-    # Assign fuelAmount to gallons for printing
-    gallons = fuelAmount
     
     # Print each line of output
-    print(format(word,'20s'),format(gallons,'7.2f'),format(bill,'8.2f'))  
+    print(format(word,'20s'),format(fuelAmount,'7.2f'),format(bill,'8.2f'))  
 
 # Close the file to free memory
 inFile.close()
