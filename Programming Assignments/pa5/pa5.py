@@ -37,9 +37,6 @@ while currentValue != 0:
         positive = positive + 1
     elif currentValue < 0:
         negative = negative + 1
-    else:
-        # If the number is not positive or negative, it must be 0.
-        print("Number is 0.")
 
     if currentValue % 2 == 0:
         even = even + 1
