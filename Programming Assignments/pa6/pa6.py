@@ -14,6 +14,10 @@
 file = open("pa6numbers.py", 'r')
 
 all = ''
+maxInf = 0
+minSen = 0
+maxInfCity = ''
+minSenCity = ''
 
 print(format("City/State", '17s'), format("Pneumonia Rate", '16s'), format("Infant Rate", '15s'), "Senior Rate")
 print("--------------------------------------------------------------")
@@ -26,4 +30,24 @@ while all != -1:
     pnu = eval(file.readline())
     inf = eval(file.readline())
     sen = eval(file.readline())
-    print(format(line, '20s'), format((pnu/all) * 100, '7.4f'), format((inf/all) * 100, '15.4f'), format((sen/all) * 100, '15.4f'))
+    pnuRate = (pnu/all) * 100
+    infRate = (inf/all) * 100
+    senRate = (sen/all) * 100
+    minSen = senRate
+    print(format(line, '20s'), format(pnuRate, '7.4f'), format(infRate, '15.4f'), format(senRate, '15.4f'))
+
+    if infRate > maxInf:
+        maxInf = infRate
+        maxInfCity = line
+
+    if senRate < minSen:
+        minSen = senRate
+        minSenCity = line
+
+print("Maximum Infant Rate")
+print("--------------------")
+print(format(maxInfCity, '20s'), format(maxInf, '0.4f'))
+
+print("Minimum Senior Rate")
+print("--------------------")
+print(format(minSenCity, '20s'), format(minSen, '0.4f'))
