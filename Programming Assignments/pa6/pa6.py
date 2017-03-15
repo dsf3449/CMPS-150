@@ -22,7 +22,7 @@ minSenCity = ''
 print(format("City/State", '17s'), format("Pneumonia Rate", '16s'), format("Infant Rate", '15s'), "Senior Rate")
 print("--------------------------------------------------------------")
 
-while all != -1:
+while True:
     # Get the city / state, needs strip for newline char
     line = file.readline().strip()
 
@@ -30,6 +30,10 @@ while all != -1:
     pnu = eval(file.readline())
     inf = eval(file.readline())
     sen = eval(file.readline())
+
+    if all == -1:
+        break
+    
     pnuRate = (pnu/all) * 100
     infRate = (inf/all) * 100
     senRate = (sen/all) * 100
@@ -43,7 +47,7 @@ while all != -1:
     if senRate < minSen:
         minSen = senRate
         minSenCity = line
-
+        
 print("Maximum Infant Rate")
 print("--------------------")
 print(format(maxInfCity, '20s'), format(maxInf, '0.4f'))
