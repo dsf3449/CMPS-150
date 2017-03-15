@@ -51,7 +51,7 @@ while True:
         # If so, assign that value to the max variable
         maxInf = infRate
         maxInfCity = line
-
+    
     # Same as above, just if the senior rate is less than the previous city
     if senRate < minSen:
         minSen = senRate
