@@ -73,4 +73,5 @@ def main():
     print("-------------")
     print("Class Average =",format(overallAverage, '0.2f'), "%")
 
+# Call the main function
 main()

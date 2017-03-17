@@ -57,6 +57,9 @@ while True:
         minSen = senRate
         minSenCity = line
 
+# Don't need the file anymore, close it.
+file.close()
+
 # Print the maximum infant rate
 print()
 print("Maximum Infant Rate")
