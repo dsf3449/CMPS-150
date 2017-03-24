@@ -96,6 +96,8 @@ def main():
             quadrant()
         elif selection == 4:
             roots()
+        elif selection == 5:
+            print("Exiting...")
         else:
             print("Invalid selection, please try again.")
 
