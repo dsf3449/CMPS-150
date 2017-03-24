@@ -15,6 +15,7 @@ import math
 
 def slope():
     # Value returning function requirement satisfied
+    printLine()
     var1 = eval(input("Enter coordinate #1: "))
     var2 = eval(input("Enter coordinate #2: "))
     numerator = var2[1] - var1[1]
@@ -23,15 +24,21 @@ def slope():
 
 def triType():
     # Void function requirement satisfied
+    printLine()
     var1 = eval(input("Enter the sides of the triangle: "))
     if var1[0] == var1[1] and var1[0] == var1[2]:
         print("This is an equilateral triangle.")
-    elif var1[0] == var1[1] or var1[0] == var1[2]:
+    elif var1[0] == var1[1] or var1[0] == var1[2] or var1[1] == var1[2]:
         print("This is an isosceles triangle.")
+    elif var1[0] < 0 or var1[1] < 0:
+        print("Triangles cannot have negative sides, please try again.")
     else:
         print("This is a scalene triangle.")
+    input("Press enter to continue...")
+    printLine()
 
 def quadrant():
+    printLine()
     var1 = eval(input("Enter coordinate: "))
     if var1[0] > 0 and var1[1] > 0:
         print("This point is in Quadrant I.")
@@ -49,8 +56,11 @@ def quadrant():
         print("This point is on the x-axis.")
     else:
         print("Error.")
+    input("Press enter to return to continue...")
+    printLine()
 
 def roots():
+    printLine()
     var1 = eval(input("Enter 3 coefficients: "))
     root1 = ((var1[1] * -1) + math.sqrt((var1[1] ** 2) - (4 * var1[0] * var1[2]))) / (2 * var1[0])
     root2 = ((var1[1] * -1) - math.sqrt((var1[1] ** 2) - (4 * var1[0] * var1[2]))) / (2 * var1[0])
@@ -58,25 +68,35 @@ def roots():
         print("Roots are: ", format(root1, '0.2f'), ", ", format(root2, '0.2f'), sep="")
     else:
         print("Roots are: ", format(root1, '0.0f'), ", ", format(root2, '0.0f'), sep="")
+    input("Press enter to continue...")
+    printLine()
+
+def printLine():
+    print("------------------------------")
 
 def main():
     selection = 0
     while selection != 5:
+        print("Please choose from the list:")
         print("1) Compute Slope of a Line")
         print("2) Determine Triangle Type")
         print("3) Determine Quadrant")
         print("4) Compute Roots of Quad Eq")
         print("5) Quit")
-        
+        printLine()
         selection = eval(input("Enter Selection: "))
         
         if selection == 1:
             print("Slope = ", format(slope(), '0.2f'))
+            input("Press enter to continue...")
+            printLine()
         elif selection == 2:
             triType()
         elif selection == 3:
             quadrant()
         elif selection == 4:
             roots()
+        else:
+            print("Invalid selection, please try again.")
 
 main()
