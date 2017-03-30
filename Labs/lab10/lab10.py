@@ -5,18 +5,18 @@ def process(type, previousBalance, changer):
     if type == 'W':
         newBalance = (previousBalance - changer)
         if newBalance < 0:
-            print(format("Withdrawal", '15s'), format(changer, '0.2f'), format("Insufficient Funds", '>23s'))
+            print("Withdrawal", format(changer, '10.2f'), format("Insufficient Funds", '>23s'))
             return previousBalance
         elif newBalance > 0:
-            print(format("Withdrawal", '15s'), format(changer, '0.2f'), format(newBalance, '11.2f'))
+            print("Withdrawal", format(changer, '10.2f'), format(newBalance, '11.2f'))
             return newBalance
     elif type == 'D':
         newBalance = (previousBalance + changer)
-        print(format("Deposit", '15s'), format(changer, '0.2f'), format(newBalance, '11.2f'))
+        print("Deposit", format(changer, '13.2f'), format(newBalance, '11.2f'))
         return newBalance
     elif type == 'B':
         newBalance = previousBalance
-        print(format("Balance", '26s'), format(newBalance, '0.2f'))
+        print("Balance", format(newBalance, '25.2f'))
         return newBalance
     elif type == 'X':
         print()
