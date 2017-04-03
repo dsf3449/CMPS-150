@@ -32,3 +32,8 @@ eurasia_sales = add(euro_sales, asia_sales)
 # 51147
 cube_volume = to_the_power_of(cube_side, 3)
 
+# 51148
+max(population1, population2)
+
+# 51149
+max2(max2(population1, population2), max2(population3, population4))
