@@ -16,7 +16,7 @@ class Account:
         self.balance = balanceIn
         self.totalDeposits = depositIn
         self.totalWithdrawals = withdrawIn
-
+    
     def GetBalance(self):
         return self.balance
 
@@ -24,17 +24,15 @@ def main():
     print()
     print("Enter the following for the first account:")
     a,b,c = eval(input("Beginning balance, total deposit amounts and total withdrawal amounts: "))
-    myAcct= Account(a,b,c)
-
+    myAcct = Account(a,b,c)
+    
     print()
     print("Enter the following for the second account:")
     a,b,c = eval(input("Beginning balance, total deposit amounts and total withdrawal amounts: "))
     yourAcct = Account(a,b,c)
-
+    
     print()
     print("First account balance:  $", myAcct.GetBalance())
     print("Second account balance: $", yourAcct.GetBalance())
 
 main()
-
-    
