@@ -46,18 +46,17 @@ class Account:
         print(format(self.__acctNum, '14s'), "Balance", format(self.__balance, '29.2f'))
 
 def main():
-    #filename = input("What is the name of your input file? ")
-    #infile = open(filename, 'r')
-    infile = open("trans.py", 'r')
+    filename = input("What is the name of your input file? ")
+    infile = open(filename, 'r')
     print()
     
-    ID1 = "ABC123" #input("Enter bank account ID #1: ")
-    balance1 = 200 #eval(input("Enter balance for bank account #1: "))
+    ID1 = input("Enter bank account ID #1: ")
+    balance1 = eval(input("Enter balance for bank account #1: "))
     acct1 = Account(ID1, balance1)
     print()
     
-    ID2 = "DEF456" #input("Enter bank account ID #2: ")
-    balance2 = 500 #eval(input("Enter balance for bank account #2: "))
+    ID2 = input("Enter bank account ID #2: ")
+    balance2 = eval(input("Enter balance for bank account #2: "))
     acct2 = Account(ID2, balance2)
     print()
 
